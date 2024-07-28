@@ -6,7 +6,8 @@ import itemRoutes from './routes/items';
 require('dotenv').config();
 
 const app = express();
-app.use(json());
+app.use(express.json());
+app.use(express.static('public'));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
